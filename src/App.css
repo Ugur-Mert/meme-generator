@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background: linear-gradient(to right, #ce49bf 0%, #f190b7 100%);
 }
 /*Header component*/
 header {
@@ -42,11 +43,11 @@ header {
   align-self: center;
 }
 
-/*Form component*/
+/*Meme component*/
 main {
   padding: 50px;
 }
-form {
+.meme {
   display: grid;
   grid-template: 40px 40px / 1fr 1fr;
   gap: 25%;
@@ -73,4 +74,10 @@ form {
   grid-column: 1 / -1;
   border: none;
   cursor: pointer;
+}
+
+.meme-image {
+  margin: 10% auto;
+  display: block;
+  width: 30%;
 }
