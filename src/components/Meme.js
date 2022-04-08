@@ -14,17 +14,18 @@ export default function Meme() {
       ...prevMeme,
       [name]: value,
     }));
-
-    console.log(meme);
   }
 
   const [allMemeImages, setAllMemeImages] = React.useState([]);
 
   React.useEffect(function () {
-    console.log("Effect ran");
-    fetch("https://api.imgflip.com/get_memes")
-      .then((res) => res.json())
-      .then((dataImg) => setAllMemeImages(dataImg.data.memes));
+    async function getMemes() {
+      const res = await fetch("https://api.imgflip.com/get_memes");
+      const data = await res.json();
+      setAllMemeImages(data.data.memes);
+    }
+
+    getMemes();
   }, []);
 
   function getMemeImage() {
